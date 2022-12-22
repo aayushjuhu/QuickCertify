@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="!">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Condensed">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Unbounded">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="image-removebg-preview (8).png">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>QuickCertify-Accomplishment</title>
+    <script type="text/javascript">
+        function cert(){
+            var nm=document.getElementById('name').value;
+            var cname=document.getElementById('cname').value;
+            var dom=document.getElementById('dom').value;
+            var dt=document.getElementById('dt').value;
+            var pos=document.getElementById('pos').value;
+
+            var str1=" ";
+            var str1=" ";
+            var str=" ";
+            
+            if(nm==""||nm==null){
+                alert("Please enter name");
+            }
+            else if(cname==""||cname==null){
+                alert("Please enter competition/course name");
+            }
+            else if(dt==""||dt==null){
+                alert("Please enter date");
+            }
+            else if(pos==""||pos==null){
+                alert("Please enter position");
+            }
+            
+            
+            else{
+                var c = document.getElementById("rawimg");
+                var down1=document.getElementById('down').style.visibility='visible';
+                var ctx = c.getContext("2d");
+                var img = document.getElementById("scream");
+                
+                
+                if(dom==""||dom==null || typeof(dom)==undefined){
+                    var str=cname+" held on "+dt;
+                    var st="and has secured ";
+                    var st2=" position."
+                    ctx.drawImage(img,10,10);
+                    ctx.font="40pt Lobster";
+                    ctx.fillText(nm,500,340)
+                    ctx.font="18pt Times New Roman";
+                    ctx.fillText(str,588,440);
+                    ctx.font="18pt Times New Roman";
+                    ctx.fillText(st,400,468);
+                    ctx.font="italic bold 20pt Times New Roman";
+                    ctx.fillText(pos,560,468);
+                    ctx.font="18pt Times New Roman";
+                    ctx.fillText(st2,600,468);
+                    ctx.font="40pt Lobster";
+                    ctx.fillText("Congratulations!",580,540);
+
+
+                }
+                else{
+                    var str1=cname+" under "+dom+" domain";
+                    var str2="on "+dt+" and has secured ";
+                    var st1=" position."
+                    ctx.drawImage(img,10,10);
+                    ctx.font="40pt Lobster";
+                    ctx.fillText(nm,500,340);
+                    ctx.font="18pt Times New Roman";
+                    ctx.fillText(str1,588,440);
+                    ctx.font="18pt Times New Roman";
+                    ctx.fillText(str2,400,480);
+                    ctx.font="italic bold 20pt Lobster";
+                    ctx.fillText(pos,708,480);
+                    ctx.font="18pt Times New Roman";
+                    ctx.fillText(st1,748,480);
+                    ctx.font="40pt Lobster";
+                    ctx.fillText("Congratulations!",580,540);
+
+                    
+                }
+      
+            }
+            
+        }
+        function save(){
+            var finalimg=document.getElementById("rawimg",1.0).toDataURL("image/jpg");
+            var down=document.createElement('a');
+            down.download='certificate.jpg';
+            down.href=finalimg;
+            down.click();
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="index.html">
+          <img src="logocopy-removebg-preview.png" alt="logo" style="width:180px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav" id="nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html"><i class="fa fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="participation.html"><i class="bi bi-award-fill"></i> Participation certificates</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="accomplishment.html"><i class="bi bi-award-fill"></i> Accomplishment certificates</a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+    <br><br>
+    <div class="container-fluid">
+        <h1 class="text-center" style="font-family: Roboto Slab;color: blueviolet;">Accomplishment Certificate</h1>
+        <div class="row">
+            <div class="col-sm-6">
+                <form class="form-group">
+                    <div class="form-group">
+                      <label for="Name"><sup style="color: red;">*</sup>Full Name of the Participant:</label>
+                      <input type="text" class="form-control" id="name" placeholder="Enter Name of the Participant:">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="cname"><sup style="color: red;">*</sup>Competition/Course Name:</label>
+                      <input type="text" class="form-control" id="cname" placeholder="Enter Competition/Course Name">
+                    </div>
+                    <div class="form-group">
+                      <label for="position"><sup style="color: red;">*</sup>Position:</label>
+                      <!-- <input type="text" class="form-control" id="pos" placeholder="Enter Position"> -->
+                      <select id="pos">
+                        
+                        <option value=1st>1st</option>
+                        <option value="2nd">2nd</option>
+                        <option value="3rd">3rd</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cname">Domain Name:</label>
+                        <input type="" class="form-control" id="dom" placeholder="Enter Domain">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dt"><sup style="color: red;">*</sup>Date:</label>
+                        <input type="Date" class="form-control" id="dt">
+                    </div>
+                    
+                    <button type="button" class="btn btn-info"  onclick="cert()">Submit</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        <img id="scream" hidden src="Slide2 - Copy.JPG" alt="The Scream" width="220" height="277">
+        
+
+        <canvas class="container-fluid" id="rawimg" width="1056" height="630" style="border:1px solid black;"></canvas>
+        <br>
+        
+        <button type="button" class="btn btn-info" id="down" style="visibility: hidden;" onclick="save()">Download</button>
+    </div>
+    <br><br><br><br><br><br><br><br><br<br><br><br>
+    
+    <footer class="container-fluid text-center" style="background-color:darkgray">We do not store any information entered in our system.<br>&#169;2022, QuickCertify</footer>
+
+    
+</body>
+</html>
