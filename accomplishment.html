@@ -67,28 +67,31 @@
                 
                 
                 if(dom==""||dom==null || typeof(dom)==undefined){
-                    var str=cname+" held on "+dt;
-                    var st="and has secured ";
+                    var str=cname+" held on "+dt+" and has secured";
+                    
                     var st2=" position."
                     ctx.drawImage(img,10,10);
+                    ctx.fillStyle="#8229FF";
                     ctx.font="italic 40pt Times New Roman";
-                    ctx.fillText(nm,500,340)
+                    ctx.fillText(nm,680,340)
                     ctx.font="18pt Times New Roman";
-                    ctx.fillText(str,588,440);
-                    ctx.font="18pt Times New Roman";
-                    ctx.fillText(st,400,468);
+                    ctx.fillStyle="black";
+                    ctx.fillText(str,730,440);
+                    
                     ctx.font="italic bold 20pt Times New Roman";
-                    ctx.fillText(pos,560,468);
+                    ctx.fillText(pos,554,468);
                     ctx.font="18pt Times New Roman";
                     ctx.fillText(st2,600,468);
                     ctx.font="italic 40pt Times New Roman";
-                    ctx.fillText("Congratulations!",520,540);
-                    ctx.drawImage(image1,480,620);
+                    ctx.fillStyle="#8229FF";
+                    ctx.fillText("Congratulations!",700,540);
+                    ctx.drawImage(image1,600,620);
                     ctx.font="14pt Times New Roman";
-                    ctx.fillText(p1,440,700);
-                    ctx.drawImage(image2,740,620);
+                    ctx.fillStyle="black";
+                    ctx.fillText(p1,600,700);
+                    ctx.drawImage(image2,1000,620);
                     ctx.font="14pt Times New Roman";
-                    ctx.fillText(p2,720,700);
+                    ctx.fillText(p2,1000,700);
 
 
                 }
@@ -98,23 +101,27 @@
                     var st1=" position."
                     ctx.drawImage(img,10,10);
                     ctx.font="italic 40pt Times New Roman";
-                    ctx.fillText(nm,500,340);
+                    ctx.fillStyle="#8229FF";
+                    ctx.fillText(nm,680,340);
+                    ctx.fillStyle="black";
                     ctx.font="18pt Times New Roman";
-                    ctx.fillText(str1,588,440);
+                    ctx.fillText(str1,730,440);
                     ctx.font="18pt Times New Roman";
-                    ctx.fillText(str2,400,480);
+                    ctx.fillText(str2,548,480);
                     ctx.font="italic bold 20pt Times New Roman";
-                    ctx.fillText(pos,708,480);
+                    ctx.fillText(pos,860,480);
                     ctx.font="18pt Times New Roman";
-                    ctx.fillText(st1,748,480);
+                    ctx.fillText(st1,900,480);
                     ctx.font="italic 40pt Times New Roman";
-                    ctx.fillText("Congratulations!",520,540);
-                    ctx.drawImage(image1,480,620);
+                    ctx.fillStyle="#8229FF";
+                    ctx.fillText("Congratulations!",700,560);
+                    ctx.drawImage(image1,600,620);
+                    ctx.fillStyle="black";
                     ctx.font="14pt Times New Roman";
-                    ctx.fillText(p1,440,700);
-                    ctx.drawImage(image2,740,620);
+                    ctx.fillText(p1,600,700);
+                    ctx.drawImage(image2,1000,620);
                     ctx.font="14pt Times New Roman";
-                    ctx.fillText(p2,720,700);
+                    ctx.fillText(p2,1000,700);
 
                     
                 }
@@ -211,11 +218,11 @@
             </div>
         </div>
         <br>
-        <img id="scream" hidden src="Slide2.JPG" alt="The Scream" width="1056" height="630">
+        <img id="scream" hidden src="ac1.png" alt="The Scream" width="1451" height="630">
         <img id="image1" hidden  alt="The Scream" width='117' height='50'>
         <img id="image2" hidden  alt="The Scream" width='117' height='50'>
 
-        <canvas class="container-fluid" id="rawimg" width="1056" height="816" style="border:1px solid black;"></canvas>
+        <canvas class="container-fluid" id="rawimg" width="1451" height="816" style="border:1px solid black;"></canvas>
         <br>
         
         <button type="button" class="btn btn-outline-info" id="down" style="visibility: hidden;" onclick="save()">Download</button>

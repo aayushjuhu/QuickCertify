@@ -47,7 +47,7 @@
             }
             else if(s2==""||s2==null){
                 alert("upload signature");
-            }
+           }
             
             
             else{
@@ -62,37 +62,39 @@
                     var str=cname+" on "+dt+".";
                     ctx.drawImage(img,10,10);
                     ctx.font="italic 40pt Times New Roman";
-                    ctx.fillText(nm,500,340);
+                    ctx.fillStyle="#006BD6";
+                    ctx.fillText(nm,640,340);
+                    ctx.fillStyle="black";
                     ctx.font="18pt Times New Roman";
-                    ctx.fillText(str,588,440);
-                    ctx.drawImage(image1,480,620);
+                    ctx.fillText(str,730,440);
+                    ctx.drawImage(image1,580,620);
                     ctx.font="14pt Times New Roman";
-                    ctx.fillText(p1,440,700);
-                    ctx.drawImage(image2,740,620);
+                    ctx.fillText(p1,600,700);
+                    ctx.drawImage(image2,1000,620);
                     ctx.font="14pt Times New Roman";
-                    ctx.fillText(p2,720,700);
+                    ctx.fillText(p2,1000,700);
                     
                     
 
                 }
                 else{
-                    var str1=cname+" under "+dom+" domain";
-                    var str2="on "+dt;
-                    console.log(str1);
-                    console.log(str2);
+                    var str1=cname+" under "+dom+" domain on "+dt;;
+                    // var str2="on "+dt;
                     ctx.drawImage(img,10,10);
                     ctx.font="italic 40pt Times New Roman";
-                    ctx.fillText(nm,500,340);
+                    ctx.fillStyle="#006BD6";
+                    ctx.fillText(nm,640,340);
+                    ctx.fillStyle="black";
                     ctx.font="18pt Times New Roman";
-                    ctx.fillText(str1,588,440);
-                    ctx.font="18pt Times New Roman";
-                    ctx.fillText(str2,400,480);
-                    ctx.drawImage(image1,480,620);
+                    ctx.fillText(str1,730,440);
+                    // ctx.font="18pt Times New Roman";
+                    // ctx.fillText(str2,400,480);
+                    ctx.drawImage(image1,600,620);
                     ctx.font="14pt Times New Roman";
-                    ctx.fillText(p1,440,700);
-                    ctx.drawImage(image2,740,620);
+                    ctx.fillText(p1,600,700);
+                    ctx.drawImage(image2,1000,620);
                     ctx.font="14pt Times New Roman";
-                    ctx.fillText(p2,720,700);
+                    ctx.fillText(p2,1000,700);
 
                     
                 }
@@ -181,13 +183,13 @@
             </div>
         </div>
         <br>
-        <img id="scream" hidden src="Slide1.JPG" alt="The Scream" width="1056" height="816">
+        <img id="scream" hidden src="pc1.png" alt="The Scream" width="1451" height="816">
         <img id="image1" hidden  alt="The Scream" width='117' height='50'>
         <img id="image2" hidden  alt="The Scream" width='117' height='50'>
 
 
         
-        <canvas class="container-fluid" id="rawimg" width="1056" height="816" style="border:1px solid black;"></canvas> 
+        <canvas class="container-fluid" id="rawimg" width="1451" height="816" style="border:1px solid black;"></canvas> 
 
         <br>
         
