@@ -25,7 +25,10 @@
             var dom=document.getElementById('dom').value;
             var dt=document.getElementById('dt').value;
             var pos=document.getElementById('pos').value;
-
+            var p1=document.getElementById("p1").value;
+            var s1=document.getElementById("s1").value;
+            var p2=document.getElementById("p2").value;
+            var s2=document.getElementById("s2").value;
             var str1=" ";
             var str1=" ";
             var str=" ";
@@ -41,6 +44,18 @@
             }
             else if(pos==""||pos==null){
                 alert("Please enter position");
+            }
+            else if(p1==""||p1==null){
+                alert("Please enter signatory name");
+            }
+            else if(s1==""||s1==null){
+                alert("upload signature");
+            }
+            else if(p2==""||p2==null){
+                alert("Please enter signatory name");
+            }
+            else if(s2==""||s2==null){
+                alert("upload signature");
             }
             
             
@@ -66,8 +81,14 @@
                     ctx.fillText(pos,560,468);
                     ctx.font="18pt Times New Roman";
                     ctx.fillText(st2,600,468);
-                    ctx.font="40pt Times New Roman";
-                    ctx.fillText("Congratulations!",580,540);
+                    ctx.font="italic 40pt Times New Roman";
+                    ctx.fillText("Congratulations!",520,540);
+                    ctx.drawImage(image1,480,620);
+                    ctx.font="14pt Times New Roman";
+                    ctx.fillText(p1,440,700);
+                    ctx.drawImage(image2,740,620);
+                    ctx.font="14pt Times New Roman";
+                    ctx.fillText(p2,720,700);
 
 
                 }
@@ -86,8 +107,14 @@
                     ctx.fillText(pos,708,480);
                     ctx.font="18pt Times New Roman";
                     ctx.fillText(st1,748,480);
-                    ctx.font="40pt Times New Roman";
-                    ctx.fillText("Congratulations!",580,540);
+                    ctx.font="italic 40pt Times New Roman";
+                    ctx.fillText("Congratulations!",520,540);
+                    ctx.drawImage(image1,480,620);
+                    ctx.font="14pt Times New Roman";
+                    ctx.fillText(p1,440,700);
+                    ctx.drawImage(image2,740,620);
+                    ctx.font="14pt Times New Roman";
+                    ctx.fillText(p2,720,700);
 
                     
                 }
@@ -121,10 +148,10 @@
                   <a class="nav-link" href="index.html"><i class="fa fa-home"></i> Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="participation.html"><i class="bi bi-award-fill"></i> Participation certificates</a>
+                  <a class="nav-link" href="pselection.html"><i class="bi bi-award-fill"></i> Participation certificates</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="accomplishment.html"><i class="bi bi-award-fill"></i> Accomplishment certificates</a>
+                    <a class="nav-link" href="aselection.html"><i class="bi bi-award-fill"></i> Achievement certificates</a>
                 </li>
                 
             </ul>
@@ -147,9 +174,7 @@
                     </div>
                     <div class="form-group">
                       <label for="position"><sup style="color: red;">*</sup>Position:</label>
-                      <!-- <input type="text" class="form-control" id="pos" placeholder="Enter Position"> -->
                       <select id="pos">
-                        
                         <option value=1st>1st</option>
                         <option value="2nd">2nd</option>
                         <option value="3rd">3rd</option>
@@ -164,24 +189,60 @@
                         <label for="dt"><sup style="color: red;">*</sup>Date:</label>
                         <input type="Date" class="form-control" id="dt">
                     </div>
+                    <div class="form-group">
+                        <label for="cname"><sup style="color: red;">*</sup>Person 1 Name:</label>
+                        <input type="text" class="form-control" id="p1" placeholder="Enter Person 1 name">
+                    </div>
+                    <div class="form-group">
+                        <label for="dt"><sup style="color: red;;">*</sup>Person 1 Signature(size:>=116x50):</label>
+                        <input type="file" class="form-control" accept="image/*" id="s1">
+                    </div>
+                    <div class="form-group">
+                        <label for="cname"><sup style="color: red;">*</sup>Person 2 Name:</label>
+                        <input type="text" class="form-control" id="p2" placeholder="Enter Person 2 Name">
+                    </div>
                     
-                    <button type="button" class="btn btn-info"  onclick="cert()">Submit</button>
+                    <div class="form-group">
+                        <label for="dt"><sup style="color: red;">*</sup>Person 2 Signature(size:>=116x50):</label>
+                        <input type="file" class="form-control" id="s2">
+                    </div> 
+                    <button type="button" class="btn btn-outline-info"  onclick="cert()">Submit</button>
                 </form>
             </div>
         </div>
         <br>
-        <img id="scream" hidden src="Slide2 - Copy.JPG" alt="The Scream" width="1056" height="630">
-        
+        <img id="scream" hidden src="Slide2.JPG" alt="The Scream" width="1056" height="630">
+        <img id="image1" hidden  alt="The Scream" width='117' height='50'>
+        <img id="image2" hidden  alt="The Scream" width='117' height='50'>
 
-        <canvas class="container-fluid" id="rawimg" width="1056" height="630" style="border:1px solid black;"></canvas>
+        <canvas class="container-fluid" id="rawimg" width="1056" height="816" style="border:1px solid black;"></canvas>
         <br>
         
-        <button type="button" class="btn btn-info" id="down" style="visibility: hidden;" onclick="save()">Download</button>
+        <button type="button" class="btn btn-outline-info" id="down" style="visibility: hidden;" onclick="save()">Download</button>
     </div>
     <br><br><br><br><br><br><br><br><br<br><br><br>
     
     <footer class="container-fluid text-center" style="background-color:darkgray">We do not store any information entered in our system.<br>&#169;2022, QuickCertify</footer>
 
-    
+    <script type="text/javascript">
+        const s1=document.querySelector("#s1");
+        const image1=document.querySelector("#image1");
+        s1.addEventListener("change",function(){
+            const reader1 = new FileReader();
+            reader1.addEventListener("load",()=>{
+                image1.setAttribute("src",reader1.result);
+            });
+            reader1.readAsDataURL(this.files[0]);
+        });  
+        const s2=document.querySelector("#s2");
+        const image2=document.querySelector("#image2");
+        s2.addEventListener("change",function(){
+            const reader2 = new FileReader();
+            reader2.addEventListener("load",()=>{
+                image2.setAttribute("src",reader2.result);
+            });
+            reader2.readAsDataURL(this.files[0]);
+        });  
+    </script>
 </body>
 </html>

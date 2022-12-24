@@ -59,40 +59,43 @@
                 
                 
                 if(dom==""||dom==null || typeof(dom)==undefined){
-                    var str=cname+" on "+dt+".";
+                    var str="had participated in "+cname+" on "+dt+".";
                     ctx.drawImage(img,10,10);
-                    ctx.font="italic 40pt Times New Roman";
-                    ctx.fillText(nm,500,340);
-                    ctx.font="18pt Times New Roman";
-                    ctx.fillText(str,588,440);
-                    ctx.drawImage(image1,480,620);
-                    ctx.font="14pt Times New Roman";
-                    ctx.fillText(p1,440,700);
-                    ctx.drawImage(image2,740,620);
-                    ctx.font="14pt Times New Roman";
-                    ctx.fillText(p2,720,700);
+                    ctx.font="italic 40pt Georgia";
+                    ctx.fillStyle="#833978";
+                    ctx.fillText(nm,740,300);
+                    ctx.font="18pt Georgia";
+                    ctx.fillStyle="#595959";
+                    ctx.fillText(str,588,400);
+                    ctx.drawImage(image1,700,610);
+                    ctx.font="14pt Georgia";
+                    ctx.fillText(p1,700,700);
+                    ctx.drawImage(image2,1100,610);
+                    ctx.font="14pt Georgia";
+                    ctx.fillText(p2,1100,700);
                     
                     
 
                 }
                 else{
-                    var str1=cname+" under "+dom+" domain";
+                    var str1="had participated in "+cname+" under "+dom+" domain";
                     var str2="on "+dt;
                     console.log(str1);
                     console.log(str2);
                     ctx.drawImage(img,10,10);
-                    ctx.font="italic 40pt Times New Roman";
-                    ctx.fillText(nm,500,340);
-                    ctx.font="18pt Times New Roman";
-                    ctx.fillText(str1,588,440);
-                    ctx.font="18pt Times New Roman";
-                    ctx.fillText(str2,400,480);
-                    ctx.drawImage(image1,480,620);
-                    ctx.font="14pt Times New Roman";
-                    ctx.fillText(p1,440,700);
-                    ctx.drawImage(image2,740,620);
-                    ctx.font="14pt Times New Roman";
-                    ctx.fillText(p2,720,700);
+                    ctx.font="italic 40pt Georgia";
+                    ctx.fillStyle="#833978";
+                    ctx.fillText(nm,740,300);
+                    ctx.font="18pt Georgia";
+                    ctx.fillStyle="#595959";
+                    ctx.fillText(str1,588,400);
+                    ctx.fillText(str2,588,440);
+                    ctx.drawImage(image1,700,610);
+                    ctx.font="14pt Georgia";
+                    ctx.fillText(p1,700,700);
+                    ctx.drawImage(image2,1100,610);
+                    ctx.font="14pt Georgia";
+                    ctx.fillText(p2,1100,700);
 
                     
                 }
@@ -181,13 +184,13 @@
             </div>
         </div>
         <br>
-        <img id="scream" hidden src="Slide1.JPG" alt="The Scream" width="1056" height="816">
+        <img id="scream" hidden src="pc2.png" alt="The Scream" width="1056" height="816">
         <img id="image1" hidden  alt="The Scream" width='117' height='50'>
         <img id="image2" hidden  alt="The Scream" width='117' height='50'>
 
 
         
-        <canvas class="container-fluid" id="rawimg" width="1056" height="816" style="border:1px solid black;"></canvas> 
+        <canvas class="container-fluid" id="rawimg" width="1415" height="816" style="border:1px solid black;"></canvas> 
 
         <br>
         
